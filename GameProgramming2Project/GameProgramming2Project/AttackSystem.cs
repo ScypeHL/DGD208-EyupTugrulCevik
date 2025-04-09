@@ -8,14 +8,42 @@ namespace Pro
 {
     public class AttackSystem
     {    
-        public void AttackWithGun(int times)
+        public AttackSystem(PlayerController pc) 
         {
-            Console.WriteLine($"Player attacks with gun {times} times");
+            // pc.attackHappened += Attack;
+            pc.attackCompleted += Attack;
+        }
+        
+        public void AttackWithGun()
+        {
+            Console.WriteLine($"Player attacks with gun");
         }
 
-        public void AttackWithSword(int times)
+        public void AttackWithSword()
         {
-            Console.WriteLine($"Player attacks with {times} sword");
+            Console.WriteLine($"Player attacks with sword");
+        }
+
+        public void AttackWithFist()
+        {
+            Console.WriteLine($"Player attacks with fists");
+        }
+
+        // [EventHanlder] (object sender, AttackEventArgs e)
+        public void Attack(int attackType)
+        {
+            switch (attackType)
+            {
+                case 0:
+                    AttackWithGun();
+                    break;
+                case 1:
+                    AttackWithSword();
+                    break;
+                default:
+                    AttackWithFist();
+                    break;
+            }
         }
     }
 }

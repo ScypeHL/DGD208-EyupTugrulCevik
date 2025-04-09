@@ -8,14 +8,14 @@ namespace Pro
 {
     internal class FoodSystem
     {
-        public void EatBread()
+        public string EatBread(int times)
         {
-            Console.WriteLine("eating bread");
+            return $"eating {times} bread";
         }
 
-        public void EatPie()
+        public string EatPie(int times)
         {
-            Console.WriteLine("eating pie");
+            return $"eating {times} pie";
         }
     }
 }

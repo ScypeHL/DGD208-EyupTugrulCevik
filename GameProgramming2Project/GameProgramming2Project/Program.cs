@@ -6,8 +6,11 @@ namespace Pro
     {
         static void Main(string[] args)
         {
-            PlayerController pc = new PlayerController();
-            pc.start();
+            // PlayerController pc = new PlayerController();
+            // pc.start();
+
+            DataOps recipes = new DataOps();
+            recipes.start();
         }
     }
 }
